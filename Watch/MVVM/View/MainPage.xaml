@@ -1,0 +1,48 @@
+﻿<Page x:Class="Watch.MVVM.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Watch.MVVM.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" 
+      d:DesignWidth="400"
+      Title="MainPage">
+
+    <Page.DataContext>
+        <local:MainViewModel/>
+    </Page.DataContext>
+
+    <Border 
+        Background="Black"
+        CornerRadius="20"
+        BorderThickness="0">
+        <Grid>
+            <Image Source="/Images/Frame 106.png"/>
+            <TextBlock 
+                Text="{Binding Time, UpdateSourceTrigger=PropertyChanged}" 
+                FontSize="32"
+                Foreground="#FF6D0F" 
+                Margin="140,170,140,387"/>
+            <TextBlock
+                Text="{Binding Day, UpdateSourceTrigger=PropertyChanged}"
+                FontSize="32"
+                Foreground="#FF6D0F" 
+                Margin="57,277,306,278" 
+                />
+            <TextBlock 
+                Text="{Binding Data, UpdateSourceTrigger=PropertyChanged}" 
+                FontSize="30"
+                Foreground="#FF6D0F" 
+                Margin="116,392,113,165"/>
+            <TextBlock
+                Text="{Binding Batary, UpdateSourceTrigger=PropertyChanged}"
+                FontSize="25"
+                Foreground="#FF6D0F" 
+                Margin="289,285,45,282" 
+                />
+            <Image Source="/Images/startbutton.png" Margin="166,516,166,56"/>
+        </Grid>
+    </Border>
+
+</Page>
